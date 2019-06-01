@@ -13,7 +13,7 @@ public class RepoDetails {
     @SerializedName("url")
     private final String url;
 
-    RepoDetails(String name, String description, String url) {
+    public RepoDetails(String name, String description, String url) {
 
         this.name = name;
         this.description = description;

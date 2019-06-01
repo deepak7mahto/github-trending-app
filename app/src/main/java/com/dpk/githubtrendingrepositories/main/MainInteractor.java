@@ -9,7 +9,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-class MainInteractor implements MainMvpInteractor {
+public class MainInteractor implements MainMvpInteractor {
 
     private static final String TAG = "MainInteractor";
 

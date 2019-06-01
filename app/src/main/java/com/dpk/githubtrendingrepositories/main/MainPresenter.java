@@ -2,11 +2,11 @@ package com.dpk.githubtrendingrepositories.main;
 
 import com.dpk.githubtrendingrepositories.model.Repo;
 
-class MainPresenter implements MainMvpPresenter {
+public class MainPresenter implements MainMvpPresenter {
     private final MainMvpView mainMvpView;
     private final MainMvpInteractor mainMvpInteractor;
 
-    MainPresenter(MainMvpView mainMvpView, MainMvpInteractor mainMvpInteractor) {
+    public MainPresenter(MainMvpView mainMvpView, MainMvpInteractor mainMvpInteractor) {
         super();
         this.mainMvpView = mainMvpView;
         this.mainMvpInteractor = mainMvpInteractor;
@@ -28,5 +28,10 @@ class MainPresenter implements MainMvpPresenter {
 
             }
         });
+    }
+
+    @Override
+    public void loadTestData(Repo[] repos) {
+        mainMvpView.showRepoList(repos);
     }
 }
