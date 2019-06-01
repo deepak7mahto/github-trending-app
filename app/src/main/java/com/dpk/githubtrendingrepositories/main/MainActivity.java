@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import com.dpk.githubtrendingrepositories.R;
 import com.dpk.githubtrendingrepositories.base.BaseActivity;
 import com.dpk.githubtrendingrepositories.model.Repo;
+import com.dpk.githubtrendingrepositories.model.RepoDetails;
 
 public class MainActivity extends BaseActivity implements MainMvpView {
 
@@ -20,7 +21,10 @@ public class MainActivity extends BaseActivity implements MainMvpView {
         reposRecyclerView = findViewById(R.id.reposRecyclerView);
         reposRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mainMvpPresenter = new MainPresenter(this, new MainInteractor());
-        mainMvpPresenter.loadTrendingRepositories();
+//        mainMvpPresenter.loadTrendingRepositories();
+        Repo[] repos = new Repo[]{new Repo("testUsername", "testName", "testType", "testUrl", "https://google.com", new RepoDetails("testRepoName", "testDescription", "testUrl"))};
+
+        mainMvpPresenter.loadTestData(repos);
     }
 
     @Override
